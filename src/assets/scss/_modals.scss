@@ -1,0 +1,73 @@
+/*
+----------------
+Table of Content
+----------------
+1. Ip_and_Akssessuar_section
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+11.
+12.
+13.
+----------------
+*/
+
+
+
+
+/* ----- Ip_and_Akssessuar_section Start ----- */
+.ip_add, .aksessuar_add,
+.aksessuar_turi_add, .ip_and_akssessuar,
+.mahsulot_turi_add{
+    border-radius: 14px !important;
+    padding: 15px;
+
+    &__title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #F5F5F5;
+        padding-bottom: 5px;
+        font-size: 18px;
+    }
+
+    &__content{
+        padding: 10px 0 0 0;
+        font-size: 16px;
+        margin-top: 5px;
+
+
+        .exists{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+
+            &__title{
+                margin-bottom: 30px;
+                margin-left: 4px;
+            }
+
+            &__input{
+                max-width: 150px;
+            }
+        }
+    }
+
+}
+
+.ip_and_akssessuar{
+
+}
+// .absolute-right{
+//     position: absolute;
+//     right: 0;
+// }
+
+/* ----- Ip_and_Akssessuar_section End ----- */

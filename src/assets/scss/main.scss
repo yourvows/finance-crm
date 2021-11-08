@@ -1,0 +1,1298 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+@import './variables.scss';
+@import './modals.scss';
+
+/*
+----------------
+Website Name: Emiran Website
+Authors: Shokhrukh, Behruz
+Authors Email: shokhrukh024@gmail.com
+Version: 1.0.0
+----------------
+
+----------------
+Table of Content
+----------------
+1. Primary_styles_section
+2. Navbar_section
+3. Sidebar_section
+4. Home_section
+5. Finance_section
+6. Codebase_section
+7. Warehouse_section
+8. Outsource_section
+9. Supply_section
+10. Factory_section
+11. Ready_products_section
+12. Other_styles_section
+13. Media_queries_section
+----------------
+*/
+
+
+
+/* ----- Primary_styles_section Start ----- */
+ *{
+    margin: 0;
+    padding: 0;
+    // font-family: 'Poppins', sans-serif;
+    font-family: 'Heebo', sans-serif;
+ }
+
+ *,
+ *::before,
+ *::after {
+    box-sizing: border-box;
+ }
+ body{
+    font-family: 'Poppins', sans-serif;
+    // font-weight: 600;
+ }
+
+ h1{
+    font-size: 1.4em;
+ }
+
+ em{
+    font-style: normal;
+ }
+
+ a{
+    text-decoration: none;
+ }
+
+ ul{
+    list-style-type: none;
+ }
+
+
+
+ .dashboard{
+    display: flex;
+ }
+
+ .content{
+    width: 100%;
+    background: #FDFDFD !important;
+
+    margin-left: 20%;
+    transition: all 0.25s;
+ }
+
+
+ .theme--light{
+    background: #FDFDFD !important;
+ }
+
+ .btn-big{
+    height: 81px !important;
+    padding: 30px;
+ }
+
+ //.v-text-field__details{
+ //   display: none;
+ //}
+ //.v-text-field{
+ //   border: 2px solid #F5F5F5 !important;
+ //   border-radius: 14px !important;
+ //   transition: transform 0.1s ease-in-out;
+ //}
+
+ .v-text-field--outlined fieldset {
+    border: 2px solid #F5F5F5 ;
+    border-radius: 14px;
+ }
+ 
+ .radioGroup .v-messages{
+     display: none;
+ }
+
+
+
+
+
+
+
+ .errorInput{
+    transform: scale(1.01, 1.01);
+    border: 2px solid #E74C3C !important;
+ }
+/* ----- Primary_Styles_section End ----- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----- Navbar_section Start ----- */
+.navbar{
+    border-bottom: 1px solid lightgrey;
+    width: 100%;
+    height: 112px;
+    background: green;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    position: relative;
+
+    &__items{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+/* ----- Navbar_section End ----- */
+
+
+
+
+
+
+
+
+
+
+
+/* ----- Sidebar_section Start ----- */
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    background: #FDFDFD;
+
+    width: 20% !important;
+    height: 100% !important;
+    border-right: 1px solid lightgrey;
+
+    &__inside{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%!important;
+
+
+        .items{
+            .logo{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+                padding: 10% 5%;
+
+                img{
+                    width: 60%;
+                }
+            }
+
+            width: 100%;
+            padding: 1px 20px 14px 20px;
+            color: $grey;
+
+            .item{
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .item .caret{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+
+                padding: 18px;
+                div{
+                    display: flex;
+                    span{
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin-left: 16px;
+                    }
+                }
+            }
+
+            .caret-activated{
+                background: #EFEFEF;
+                border-radius: 14px;
+                padding: 14px;
+                color: black!important;
+            }
+            .caret-icon-top {
+                @extend .filter-black;
+                transform: rotate(180deg);
+            }
+
+
+            /* Hide the nested list */
+            .nested {
+                display: none;
+                position: relative;
+                li{
+                    padding: 10px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-weight: 600;
+                    div{
+                        display: flex;
+                        align-items: center;
+                        img:first-child{
+                            margin-right: 8px;
+                        }
+                    }
+                    .caret-icon-right{
+                        display: none;
+                        transform: rotate(-90deg);
+                    }
+                    // span::before{
+                    //     content:url('../icons/line.svg');
+                    //     display: inline-block;
+                    //     color: black;
+                    //     margin-right: 6px;
+                    //     // padding: 15px 0;
+                    // }
+
+                    // &:nth-child(3n) span:before{
+                    //     content:url('../icons/line-2.svg');
+                    //     position: absolute;
+                    //     top: 0;
+                    //     color: black;
+                    // }
+                }
+
+            }
+            .active {
+                display: block !important;
+            }
+            .active-black{
+                display: block !important;
+                @extend .filter-black;
+            }
+
+        }
+
+        .add-box{
+            width: 90%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+
+            margin: 20px !important;
+            padding: 30px !important;
+            border: 2.5px dashed #EFEFEF;
+            border-radius: 24px;
+
+            .add-button{
+                width: 48px;
+                height: 48px;
+                border-radius: 100%;
+                background: #2886FF;
+
+                display: flex;
+                justify-content: center;
+                img{
+                    align-self: center;
+                }
+            }
+            .add-text{
+                margin-top: 15px;
+                text-align: center;
+                div{
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 21px;
+                }
+
+            }
+    }
+    }
+}
+/* ----- Sidebar_section End ----- */
+
+
+
+
+
+
+
+
+
+
+/* ----- Home_section Start ----- */
+.home{
+    padding: 20px;
+    // width: 100%;
+
+    .title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2vw;
+        line-height: 25px;
+        color: black;
+    }
+
+
+    //===== FirstRowCards.vue =====
+    .first_row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+        border-bottom: 3px solid #F5F5F5;
+
+        .cardsMain {
+            width: 14vw;
+            height: 9vw;
+            padding: 1vw;
+            margin: 0.4vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #FFFFFF !important;
+            /* box-shadow: 6px 15px 50px rgba(22, 28, 36, 0.04) !important; */
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px !important;
+            border-radius: 1vw!important;
+            &:first-child{
+                margin-left: 0;
+            }
+            &:last-child{
+                margin-right: 0;
+            }
+
+
+            > span:first-child{
+               font-size: 1vw;
+            }
+            > span:last-child{
+                font-size: 1vw;
+            }
+            div{
+                .money{
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 1.6vw;
+                    line-height: 36px;
+                    color: black;
+                }
+                .chip{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: #EFF9F4 !important;
+                    width: 5vw !important;
+                    height: 2vw;
+                    border-radius: 17.5px;
+                    font-size: 1vw;
+                }
+                .greenChip {
+                    color: #56B487 !important;
+                }
+                .redChip {
+                    color: #DF3A4B !important;
+                }
+
+            }
+
+        }
+    }
+    //===== FirstRowCards.vue =====
+
+
+    //===== SecondRowCards.vue =====
+    .second_row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 28px 0 35px 0;
+        border-bottom: 3px solid #F5F5F5;
+
+        .row{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .cardsMain {
+                width: 14vw;
+                height: 9vw;
+                padding: 1vw;
+                margin: 0.4vw 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                background: #FFFFFF !important;
+                /* box-shadow: 6px 15px 50px rgba(22, 28, 36, 0.04) !important; */
+                box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px !important;
+                border-radius: 1vw!important;
+
+                span:first-child{
+                    font-size: 1vw;
+                }
+                .mass{
+                    font-size: 2vw;
+                    color: black;
+                }
+            }
+        }
+
+    }
+    //===== SecondRowCards.vue =====
+
+
+
+    //===== Chart.vue =====
+    #line-chart{
+
+        .apexcharts-tooltip {
+            background: #000!important;
+            color: white;
+
+            border-radius: 1vw!important;
+            padding: 10px;
+            min-width: 180px;
+
+            .apexcharts-tooltip-series-group{
+                padding: 5px;
+            }
+            .apexcharts-tooltip-y-group{
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+            }
+            .apexcharts-tooltip-marker{
+                align-self: baseline;
+                margin-top: 3px;
+                margin-right: 7px;
+            }
+            .apexcharts-tooltip-title{
+                font-size: 1vw;
+                opacity: 0.54;
+            }
+            .apexcharts-tooltip-text-y-label{
+                font-size: 1vw;
+                opacity: 0.54;
+            }
+            .apexcharts-tooltip-text-y-value{
+                font-size: 1.2vw;
+                letter-spacing: 1.2px;
+            }
+        }
+    }
+    //===== Chart.vue =====
+
+
+
+    //===== BottomTables.vue =====
+    .bottom_tables{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .filter{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+
+            .t-title{
+                font-size: 18px !important;
+                color: black;
+            }
+
+            .t-select{
+                max-width: 150px!important;
+            }
+        }
+
+        .first_table{
+            margin-right: 20px;
+        }
+
+        .t-card{
+            background: #fff;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px !important;
+            border-radius: 10px;
+        }
+    }
+    //===== BottomTables.vue =====
+
+
+
+    //===== Debts.vue =====
+    .debt-charts{
+        padding: 32px 0;
+        display: flex;
+        border-bottom: 3px solid #F5F5F5;
+
+        .d-card{
+            width: 100%;
+            background: #fff;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px !important;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 5px;
+
+            .blocks{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding: 10px 0 10px 10px;
+                font-size: 12px!important;
+                width: 100%;
+
+                .first_blocks{
+                    display: flex;
+
+                    .first{
+                        width: 150px;
+                        padding: 12px 12px 10px 5px;
+                        border-right: 2px solid #F5F5F5;
+                        border-bottom: 2px solid #F5F5F5;
+
+                        div{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                    }
+                    .second{
+                        width: 150px;
+                        padding: 12px 0px 10px 12px;
+                        border-bottom: 2px solid #F5F5F5;
+
+                        div{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                    }
+                }
+                .second_blocks{
+                    display: flex;
+
+                    .third{
+                        width: 150px;
+                        padding: 10px 12px 12px 5px;
+                        border-right: 2px solid #F5F5F5;
+
+                        div{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                    }
+                    .fourth{
+                        width: 150px;
+                        padding: 10px 0px 12px 12px;
+
+                        div{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //===== Debts.vue =====
+}
+
+/* ----- Home_section End ----- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----- Finance_section Start ----- */
+.finance{
+    .tabs{
+        height: auto;
+        display: flex;
+        align-items: flex-end;
+    }
+}
+/* ----- Finance_section End ----- */
+
+
+
+
+
+
+
+
+
+
+/* ----- Codebase_section Start ----- */
+
+.codebase{
+    padding-bottom: 10px;
+    .tabs{
+        height: auto;
+        display: flex;
+        align-items: flex-end;
+    }
+}
+/* ----- Codebase_section End ----- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----- Warehouse_section Start ----- */
+.warehouse{
+    .tabs{
+        height: auto;
+        display: flex;
+        align-items: flex-end;
+    }
+}
+/* ----- Warehouse_section End ----- */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----- Outsource_section Start ----- */
+.outsource{
+    .tabs{
+        height: auto;
+        display: flex;
+        align-items: flex-end;
+
+        .tab_buttons{
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+/* ----- Outsource_section End ----- */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----- Supply_section Start ----- */
+.supply{
+    .tabs{
+        height: auto;
+        display: flex;
+        align-items: flex-end;
+    }
+}
+/* ----- Supply_section End ----- */
+
+
+
+
+
+
+
+
+
+
+/* ----- Factory_section Start ----- */
+.factory{
+    .tabs{
+        height: auto;
+        display: flex;
+        align-items: flex-end;
+    }
+}
+.small_circle{
+    display: flex;
+    align-self: center;
+    margin-right: 5px;
+    margin-bottom: 1px;
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    background-color: red;
+}
+.eye_svg{
+    display: flex;
+    align-self: center;
+    margin-right: 5px;
+    margin-bottom: 1px;
+    width: 20px;
+    height: 20px;
+}
+/* ----- Factory_section End ----- */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----- Ready_products_section Start ----- */
+
+.ready-products{
+    background: #FDFDFD !important;
+    .tabs{
+        height: auto;
+        display: flex;
+        align-items: flex-end;
+    }
+}
+/* ----- Ready_products_section End ----- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----- Other_styles_section Start ----- */
+
+
+/* ----- Other_styles_section End ----- */
+
+
+
+
+
+
+
+
+/* ----- Media_queries_section Start ----- */
+
+
+/*
+  ##Device = Desktops
+  ##Screen = 1801px to higher resolution desktops
+*/
+@media (min-width: 1801px){
+
+    /* ----- Content Start ----- */
+    .content{
+        width: 100%;
+        margin-left: 20%;
+        transition: all 0.25s;
+    }
+    /* ----- Content End ----- */
+
+
+    /* ----- Sidebar Start ----- */
+    .sidebar{
+        width: 20% !important;
+        .items{
+
+            padding: 0 15px;
+            .item .caret{
+                padding: 12px;
+                img{
+                    width: 22px;
+                    margin-bottom: 3px;
+                }
+                div{
+                    span{
+                        font-size: 20px;
+                        font-weight: 600;
+                        margin-left: 16px;
+                    }
+                }
+            }
+            .nested li{
+                font-size: 20px;
+                padding: 12px;
+                img{
+                    width: 22px;
+                }
+                // span::before{
+                //     width: 10px;
+                //     height: 10px;
+                // }
+            }
+        }
+
+        .add-box{
+            padding: 25px;
+            .add-button{
+                width: 40px;
+                height: 40px;
+
+                img{
+                    width: 24px;
+                }
+            }
+            .add-text{
+                margin-top: 15px;
+                div{
+                    font-size: 16px;
+                }
+                span{
+                    font-size: 14px;
+                }
+
+            }
+        }
+    }
+ /* ----- Sidebar End ----- */
+}
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1281px to 1800px
+*/
+@media (min-width: 1281px) and (max-width: 1800px) {
+
+    /* ----- Content Start ----- */
+    .content{
+        width: 100%;
+        margin-left: 20%;
+        transition: all 0.25s;
+     }
+    /* ----- Content End ----- */
+
+
+    /* ----- Sidebar Start ----- */
+    .sidebar{
+        width: 20% !important;
+        .items{
+
+
+            padding: 0 15px;
+            .item .caret{
+                padding: 12px;
+                img{
+                    width: 18px;
+                }
+                div{
+                    span{
+                        font-size: 14px;
+                        font-weight: 600;
+                        margin-left: 16px;
+                    }
+                }
+            }
+            .nested li{
+                font-size: 14px;
+                padding: 12px;
+                img{
+                    width: 18px;
+                }
+                // span::before{
+                //     width: 10px;
+                //     height: 10px;
+                // }
+            }
+        }
+
+        .add-box{
+            padding: 25px;
+            .add-button{
+                width: 40px;
+                height: 40px;
+
+                img{
+                    width: 24px;
+                }
+            }
+            .add-text{
+                margin-top: 15px;
+                div{
+                    font-size: 16px;
+                }
+                span{
+                    font-size: 14px;
+                }
+
+            }
+        }
+    }
+     /* ----- Sidebar End ----- */
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+    /* ----- Content Start ----- */
+    .content{
+        width: 100%;
+        margin-left: 30%;
+        transition: all 0.25s;
+    }
+    /* ----- Content End ----- */
+
+
+    /* ----- Sidebar Start ----- */
+    .sidebar{
+        width: 30% !important;
+        .items{
+
+            padding: 0 15px;
+            .item .caret{
+                padding: 12px;
+                img{
+                    width: 18px;
+                }
+                div{
+                    span{
+                        font-size: 14px;
+                        font-weight: 600;
+                        margin-left: 16px;
+                    }
+                }
+            }
+            .nested li{
+                font-size: 14px;
+                padding: 12px;
+                img{
+                    width: 18px;
+                }
+                // span::before{
+                //     width: 10px;
+                //     height: 10px;
+                // }
+            }
+        }
+
+        .add-box{
+            padding: 25px;
+            .add-button{
+                width: 40px;
+                height: 40px;
+
+                img{
+                    width: 24px;
+                }
+            }
+            .add-text{
+                margin-top: 15px;
+                div{
+                    font-size: 16px;
+                }
+                span{
+                    font-size: 14px;
+                }
+
+            }
+        }
+    }
+
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* ----- Content Start ----- */
+    .content{
+        width: 100%;
+        margin-left: 30%;
+        transition: all 0.25s;
+     }
+    /* ----- Content End ----- */
+
+
+    /* ----- Sidebar Start ----- */
+    .sidebar{
+        width: 30% !important;
+
+        .items{
+
+            padding: 0 15px;
+            .item .caret{
+                padding: 12px;
+                img{
+                    width: 18px;
+                }
+                div{
+                    span{
+                        font-size: 14px;
+                        font-weight: 600;
+                        margin-left: 16px;
+                    }
+                }
+            }
+            .nested li{
+                font-size: 14px;
+                padding: 12px;
+                img{
+                    width: 18px;
+                }
+                // span::before{
+                //     width: 10px;
+                //     height: 10px;
+                // }
+            }
+        }
+
+        .add-box{
+            padding: 25px;
+            .add-button{
+                width: 40px;
+                height: 40px;
+
+                img{
+                    width: 24px;
+                }
+            }
+            .add-text{
+                margin-top: 15px;
+                div{
+                    font-size: 16px;
+                }
+                span{
+                    font-size: 14px;
+                }
+
+            }
+        }
+    }
+    /* ----- Sidebar End ----- */
+
+  }
+
+
+/*
+   ##Device = Low Resolution Tablets, Mobiles
+   ##Screen = B/w 481px to 767px
+ */
+ @media (min-width: 481px) and (max-width: 767px) {
+
+
+    /* ----- Content Start ----- */
+    .content{
+        width: 100%;
+        margin-left: 0;
+        transition: all 0.25s;
+     }
+    /* ----- Content End ----- */
+
+
+    /* ----- Sidebar Start ----- */
+    .sidebar{
+        width: 50% !important;
+
+        .items{
+
+            padding: 0 15px;
+            .item .caret{
+                padding: 12px;
+                img{
+                    width: 18px;
+                }
+                div{
+                    span{
+                        font-size: 14px;
+                        font-weight: 600;
+                        margin-left: 16px;
+                    }
+                }
+            }
+            .nested li{
+                font-size: 14px;
+                padding: 12px;
+                img{
+                    width: 18px;
+                }
+                // span::before{
+                //     width: 10px;
+                //     height: 10px;
+                // }
+            }
+        }
+
+        .add-box{
+            padding: 25px;
+            .add-button{
+                width: 40px;
+                height: 40px;
+
+                img{
+                    width: 24px;
+                }
+            }
+            .add-text{
+                margin-top: 15px;
+                div{
+                    font-size: 16px;
+                }
+                span{
+                    font-size: 14px;
+                }
+
+            }
+        }
+    }
+    /* ----- Sidebar End ----- */
+
+ }
+/*
+   ##Device = Most of the Smartphones Mobiles (Portrait)
+   ##Screen = B/w 0 to 480px
+ */
+@media (min-width: 0px) and (max-width: 480px) {
+
+    /* ----- Content Start ----- */
+    .content{
+        width: 100%;
+        margin-left: 0;
+        transition: all 0.25s;
+     }
+
+    .finance, .codebase,
+    .warehouse,
+    .factory,
+    .ready-products{
+        .tabs{
+            height: auto;
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column-reverse;
+        }
+    }
+
+    .outsource,
+    .supply{
+        .tabs{
+            height: auto;
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column-reverse;
+
+            .tab_buttons{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-right: 0;
+
+                button{
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+    /* ----- Content End ----- */
+
+
+    /* ----- Sidebar Start ----- */
+    .sidebar{
+        width: 80% !important;
+
+        .items{
+
+            padding: 0 15px;
+            .item .caret{
+                padding: 12px;
+                img{
+                    width: 18px;
+                }
+                div{
+                    span{
+                        font-size: 14px;
+                        font-weight: 600;
+                        margin-left: 16px;
+                    }
+                }
+            }
+            .nested li{
+                font-size: 14px;
+                padding: 12px;
+                img{
+                    width: 18px;
+                }
+                // span::before{
+                //     width: 10px;
+                //     height: 10px;
+                // }
+            }
+        }
+
+        .add-box{
+            padding: 25px;
+            .add-button{
+                width: 40px;
+                height: 40px;
+
+                img{
+                    width: 24px;
+                }
+            }
+            .add-text{
+                margin-top: 15px;
+                div{
+                    font-size: 16px;
+                }
+                span{
+                    font-size: 14px;
+                }
+
+            }
+        }
+    }
+    /* ----- Sidebar End ----- */
+
+}
