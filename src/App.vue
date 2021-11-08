@@ -1,7 +1,4 @@
 <template>
-<!-- Do we need this below?  -->
-<!-- Yes,definatly! this is a main page which contain all of this pages :)  -->
-<!-- Ok, no problem. -->
     <v-app app>
         <div class="dashboard">
             <sidebar></sidebar>
