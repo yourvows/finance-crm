@@ -12,16 +12,12 @@
                            class="searchInput navbarDetails" placeholder="Qidiruv">
                 </div>
             </div>
+         
+          
+          {{ $t('hello')}}
 
-            <div class="mr-2  align-center d-flex">
-                <modalCategoryAndLists></modalCategoryAndLists>
-                <v-btn icon class="mr-4" to="/codebase">
-                    <img src="../assets/icons/scan-barcode.svg" alt="">
-                </v-btn>
-
-
-                <screenshot></screenshot>
-
+            <div class="mr-2 justify-space-between align-center d-flex">
+              <locale-changer/>
                 <v-menu
                     v-model="menu"
                     :close-on-content-click="false"
@@ -82,8 +78,10 @@
 import {mapGetters, mapState, mapMutations} from 'vuex'
 import modalCategoryAndLists from '@/components/modals/Lists/Index'
 import screenshot from '../components/Screenshot'
+import LocaleChanger from "@/components/LocaleChanger.vue";
 export default {
     components: {
+      LocaleChanger,
         modalCategoryAndLists,
         screenshot
     },

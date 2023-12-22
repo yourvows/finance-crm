@@ -17,15 +17,15 @@
 
 
                     <div class="radioContent">
-                        <span>Ip</span>
+                        <span>Income</span>
                         <v-radio-group class="radioGroup" v-model="type">
-                            <v-radio value="Ip"></v-radio>
+                            <v-radio value="Income"></v-radio>
                         </v-radio-group>
                     </div>
                     <div class="radioContent mt-3">
-                        <span>Aksessuar</span>
+                        <span>Outcome</span>
                         <v-radio-group class="radioGroup" v-model="type">
-                            <v-radio value="Aksessuar"></v-radio>
+                            <v-radio value="Income"></v-radio>
                         </v-radio-group>
                     </div>
 
@@ -85,9 +85,9 @@ export default {
     },
     methods: {
         selectType() {
-            if (this.type == 'Ip') {
+            if (this.type == 'Income') {
                 return this.ipAddDialog = true
-            }else if(this.type == 'Aksessuar') {
+            }else if(this.type == 'Outcome') {
                 return this.aksessuarAddDialog = true
             }
         },

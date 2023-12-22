@@ -80,232 +80,28 @@
                     </ul>
                 </li>
                 <!-- ========== Warehouse End ========== -->
-
-
-                <!-- ========== Outsource Start ========== -->
-                <li class="item item-4">
-                    <ul class="caret" @click="assignRoute('outsource')"
-                        :class="addClass('outsource', 'caret-activated')">
-                        <div>
-                            <img :class="[ activeRoute == 'outsource' ? 'filter-black' : '' ]"
-                                 src="@/assets/icons/element-equal.svg"/>
-                            <span>Outsource</span>
-                        </div>
-                        <img :class="[ activeRoute == 'outsource' ? 'caret-icon-top' : '' ]"
-                             src="@/assets/icons/arrow-up.svg"/>
-                    </ul>
-
-                    <ul class="nested" :class="[ activeRoute == 'outsource' || activeRoute == 'outsource/mato-toquv'
-                    || activeRoute == 'outsource/yoqa-toquv' || activeRoute == 'outsource/boyoqxona'
-                    || addActiveClass2('outsource/mato-toquv', outsourceMatoToquvId)
-                    || addActiveClass2('outsource/yoqa-toquv', outsourceYoqaToquvId) ? 'active' : '' ]">
-
-                        <li @click="assignRoute('outsource/mato-toquv')"
-                            :class="addClass('outsource/mato-toquv', 'caret-activated')">
-                            <div>
-                                <span></span>Mato to`quv
-                            </div>
-                            <div>
-                                <img :class="[ activeRoute == 'outsource/mato-toquv' ? 'filter-black' : '' ]"
-                                     src="@/assets/icons/add-circle.svg"/>
-                                <img :class="[ activeRoute == 'outsource/mato-toquv' ? 'filter-black' : '',
-                                    activeRoute == 'outsource/mato-toquv' ? 'caret-icon-top' : '' ]"
-                                     src="@/assets/icons/arrow-up.svg"/>
-                            </div>
-                        </li>
-
-                        <!-- Bu pastdagi ko'ni vaqtinchalik yozib turimman -->
-                        <ul class="nested" :class="addActiveClass('outsource/mato-toquv', outsourceMatoToquvId)">
-
-                            <router-link tag="li" :to="`/outsource/mato-toquv/${item.id}`"
-                                         @click.native="assignRoute(`outsource/mato-toquv/${item.id}`, item.name)"
-                                         :class="addClass('outsource/mato-toquv', 'caret-activated', item.id)"
-                                         v-for="item of outsourceMatoToquvId" :key="item.id">
-                                <div>
-                                    <span>{{ item.name }}</span>
-                                </div>
-                                <img :class="addClass('outsource/mato-toquv', 'active-black', item.id)"
-                                     src="@/assets/icons/arrow-up.svg" class="caret-icon-right"/>
-                            </router-link>
-                        </ul>
-
-
-                        <li @click="assignRoute('outsource/yoqa-toquv')"
-                            :class="addClass('outsource/yoqa-toquv', 'caret-activated')">
-                            <div>
-                                <span></span>Yoqa to`quv
-                            </div>
-                            <div>
-                                <img :class="[ activeRoute == 'outsource/yoqa-toquv' ? 'filter-black' : '' ]"
-                                     src="@/assets/icons/add-circle.svg"/>
-                                <img :class="[ activeRoute == 'outsource/yoqa-toquv' ? 'filter-black' : '',
-                                    activeRoute == 'outsource/yoqa-toquv' ? 'caret-icon-top' : '' ]"
-                                     src="@/assets/icons/arrow-up.svg"/>
-                            </div>
-                        </li>
-
-                        <ul class="nested" :class="addActiveClass('outsource/yoqa-toquv', outsourceYoqaToquvId)">
-
-                            <router-link tag="li" :to="`/outsource/yoqa-toquv/${item.id}`"
-                                         @click.native="assignRoute(`outsource/yoqa-toquv/${item.id}`, item.name)"
-                                         :class="addClass('outsource/yoqa-toquv', 'caret-activated', item.id)"
-                                         v-for="item in outsourceYoqaToquvId" :key="item.id">
-                                <div>
-                                    <span>{{ item.name }}</span>
-                                </div>
-                                <img :class="addClass('outsource/yoqa-toquv', 'active-black', item.id)"
-                                     src="@/assets/icons/arrow-up.svg" class="caret-icon-right"/>
-                            </router-link>
-                        </ul>
-
-                        <router-link tag="li" to="/outsource/boyoqxona"
-                                     @click.native="assignRoute('outsource/boyoqxona')"
-                                     :class="addClass('outsource/boyoqxona', 'caret-activated')">
-                            <div>
-                                <span></span>Bo`yoqxona
-                            </div>
-                            <img :class="addClass('outsource/boyoqxona', 'active-black')"
-                                 class="caret-icon-right" src="@/assets/icons/arrow-up.svg"/>
-                        </router-link>
-
-                    </ul>
-                </li>
-                <!-- ========== Outsource End ========== -->
-
-
-                <!-- ========== Supply Start ========== -->
-                <li class="item item-5">
-                    <ul class="caret" @click="assignRoute('supply')"
-                        :class="addClass('supply', 'caret-activated')">
-                        <div>
-                            <img :class="[ activeRoute == 'supply' ? 'filter-black' : '' ]"
-                                 src="@/assets/icons/layer.svg"/>
-                            <span>Ta`minot</span>
-                        </div>
-                        <img :class="[ activeRoute == 'supply' ? 'caret-icon-top' : '' ]"
-                             src="@/assets/icons/arrow-up.svg"/>
-                    </ul>
-
-                    <ul class="nested" :class="[ activeRoute == 'supply' || activeRoute == 'supply/tayyor-xomashyo'
-                    || activeRoute == 'supply/tayyor-xomashyo/mato' || activeRoute == 'supply/tayyor-xomashyo/yoqa'
-                    || activeRoute == 'supply/aksessuar' || activeRoute == 'supply/bichuv' ? 'active' : '' ]">
-
-
-                        <li @click="assignRoute('supply/tayyor-xomashyo')"
-                            :class="addClass('supply/tayyor-xomashyo', 'caret-activated')">
-                            <div>
-                                <span></span>
-                                Tayyor xomashyo
-                            </div>
-
-                            <img :class="[ activeRoute == 'supply/tayyor-xomashyo' ? 'caret-icon-top' : '' ]"
-                                 src="@/assets/icons/arrow-up.svg"/>
-                        </li>
-
-                        <ul class="nested" :class="[ activeRoute == 'supply/tayyor-xomashyo' || activeRoute == 'supply/tayyor-xomashyo/mato'
-                    || activeRoute == 'supply/tayyor-xomashyo/yoqa' ? 'active' : '' ]">
-
-                            <router-link tag="li" to="/supply/tayyor-xomashyo/mato"
-                                         @click.native="assignRoute('supply/tayyor-xomashyo/mato')"
-                                         :class="addClass('supply/tayyor-xomashyo/mato', 'caret-activated')">
-                                <div>
-                                    <span></span>Mato
-                                </div>
-                                <img :class="addClass('supply/tayyor-xomashyo/mato', 'active-black')"
-                                     src="@/assets/icons/arrow-up.svg" class="caret-icon-right"/>
-                            </router-link>
-
-                            <router-link tag="li" to="/supply/tayyor-xomashyo/yoqa"
-                                         @click.native="assignRoute('supply/tayyor-xomashyo/yoqa')"
-                                         :class="addClass('supply/tayyor-xomashyo/yoqa', 'caret-activated')">
-                                <div>
-                                    <span></span>Yoqa
-                                </div>
-                                <img :class="addClass('supply/tayyor-xomashyo/yoqa', 'active-black')"
-                                     src="@/assets/icons/arrow-up.svg" class="caret-icon-right"/>
-                            </router-link>
-                        </ul>
-
-                        <router-link tag="li" to="/supply/aksessuar" @click.native="assignRoute('supply/aksessuar')"
-                                     :class="addClass('supply/aksessuar', 'caret-activated')">
-                            <div>
-                                <span></span>Aksessuar
-                            </div>
-                            <img :class="addClass('supply/aksessuar', 'active-black')"
-                                 class="caret-icon-right" src="@/assets/icons/arrow-up.svg"/>
-                        </router-link>
-
-                        <router-link tag="li" to="/supply/bichuv" @click.native="assignRoute('supply/bichuv')"
-                                     :class="addClass('supply/bichuv', 'caret-activated')">
-                            <div>
-                                <span></span>Bichuv
-                            </div>
-                            <img :class="addClass('supply/bichuv', 'active-black')"
-                                 class="caret-icon-right" src="@/assets/icons/arrow-up.svg"/>
-                        </router-link>
-                    </ul>
-                </li>
-                <!-- ========== Supply End ========== -->
-
-
-                <!-- ========== Factory Start ========== -->
-                <li class="item item-6">
-                    <ul class="caret" @click="assignRoute('factory')"
-                        :class="addClass('factory', 'caret-activated')">
-                        <div>
-                            <img :class="[ activeRoute == 'factory' ? 'filter-black' : '' ]"
-                                 src="@/assets/icons/buildings-2.svg"/>
-                            <span>Fabrika</span>
-                        </div>
-                        <img :class="[ activeRoute == 'factory' ? 'caret-icon-top' : '' ]"
-                             src="@/assets/icons/arrow-up.svg"/>
-                    </ul>
-
-                    <ul class="nested" :class="addActiveClass('factory', factoryId)">
-
-                        <router-link tag="li" @click.native="assignRoute(`factory/${item.id}`, item.name)"
-                                     :class="addClass('factory', 'caret-activated', item.id)"
-                                     :to="`/factory/${item.id}`" v-for="item in factoryId" :key="item.id">
-                            <div>
-                                <span>{{ item.name }}</span>
-                            </div>
-                            <img :class="addClass('factory', 'active-black', item.id)"
-                                 src="@/assets/icons/arrow-up.svg" class="caret-icon-right"/>
-                        </router-link>
-
-                    </ul>
-                </li>
-                <!-- ========== Factory End ========== -->
-
-
-                <!-- ========== ReadyProducts Start ========== -->
-                <li class="item item-7">
-                    <ul class="caret" @click="assignRoute('ready-products')"
-                        :class="addClass('ready-products', 'caret-activated')">
-                        <div>
-                            <img :class="addClass('ready-products', 'filter-black')"
-                                 src="@/assets/icons/shop.svg"/>
-                            <span>Tayyor mahsulotlar</span>
-                        </div>
-                        <img :class="[ activeRoute == 'ready-products' ? 'caret-icon-top' : '' ]"
-                             src="@/assets/icons/arrow-up.svg"/>
-                    </ul>
-
-                    <ul class="nested" :class="addActiveClass('ready-products', readyProductsId)">
-                        <router-link tag="li" :to="element.link"
-                                     @click.native="assignRoute(`ready-products/${element.id}`, element.title)"
-                                     :class="addClass('ready-products', 'caret-activated', element.id)"
-                                     v-for=" (element, index) in readyProductsId" :key="index">
-                            <div>
-                                <span></span>{{ element.title }}
-                            </div>
-                            <img :class="addClass('ready-products', 'active-black', element.id)"
-                                 src="@/assets/icons/arrow-up.svg" class="caret-icon-right"/>
-                        </router-link>
-                        <!-- <router-link tag="li" to="/ready-products/:id"><span></span>Qishgi</router-link> -->
-                    </ul>
-                </li>
-                <!-- ========== ReadyProducts End ========== -->
+              <li class="item item-2">
+                <router-link tag="ul" class="caret" @click.native="assignRoute('income')"
+                             :class="addClass('income', 'caret-activated')" to="/income">
+                  <div>
+                    <img :class="[ activeRoute == 'income' ? 'filter-black' : '' ]"
+                         src="@/assets/icons/dollar-square.svg"/>
+                    <span>Rasxod</span>
+                  </div>
+                </router-link>
+              </li>
+              <li class="item item-2">
+                <router-link tag="ul" class="caret" @click.native="assignRoute('outcome')"
+                             :class="addClass('outcome', 'caret-activated')" to="/outcome">
+                  <div>
+                    <img :class="[ activeRoute == 'outcome' ? 'filter-black' : '' ]"
+                         src="@/assets/icons/dollar-square.svg"/>
+                    <span>Daxod</span>
+                  </div>
+                </router-link>
+              </li>
+            
+            
             </ul>
 
             <div class="add-box" id="add-box" @click="dialog = true">

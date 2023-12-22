@@ -33,13 +33,27 @@ import { ValidationProvider, ValidationObserver } from 'vee-validate';
 import './plugins/vee-validate';
 Vue.component('ValidationObserver', ValidationObserver);
 Vue.component('ValidationProvider', ValidationProvider);
+import VueI18n from 'vue-i18n'
 
+import ru from './locales/ru.json'
+import uz from './locales/uz.json'
+const messages = {
+   ru,
+    uz
+}
+console.log(messages)
+Vue.use(VueI18n)
+const i18n = new VueI18n({
+    locale: 'ru', // set locale
+    messages, // set locale messages
+})
 
 Vue.config.productionTip = false;
 // this.$axios = axios;
 Vue.prototype.$axios = axios;
 
 new Vue({
+    i18n,
     router,
     store,
     requests,
